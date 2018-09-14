@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import urls, routers
-from usuario.views import KingAPI
-
-apiurl = routers.SimpleRouter()
-apiurl.register('king', KingAPI)
+from usuario import api_urls
+from usuario import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('user/', include(apiurl.urls))
+    path('accounts/', include('django.contrib.auth.urls')),
+    #path('signup/', views.signUp),
+    path('', include(api_urls)),
 ]
