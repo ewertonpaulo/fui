@@ -8,5 +8,5 @@ router.register('kings', views.KingViewSet, base_name='king')
 urlpatterns = [
     path('api/', include(router.urls)),
     path('home/', views.home),
-    path('sign/', views.signUp)
+    path('sign/', views.singUp)
 ]
