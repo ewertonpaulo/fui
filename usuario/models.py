@@ -5,7 +5,7 @@ from django.db import models
 class King(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, null = True)
-    full_name = models.CharField(max_length = 50, null = True )
+    full_name = models.CharField(max_length = 50, null = True)
     rg = models.CharField(max_length = 20, null = True)
     cpf_cnpj = models.CharField(max_length = 20, null = True)
     phone = models.CharField(max_length = 20, null = True)

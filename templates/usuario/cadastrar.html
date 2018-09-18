@@ -1,0 +1,86 @@
+<!DOCTYPE html> {% load staticfiles %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Fui - Eventos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+
+<body>
+  <section class="main">
+    <div class="signup col-md-6 centered">
+      <a class="title" href="/home"> CADASTRO ANIMAL </a>
+      <form action="{% url 'cadastro-king' %}" method="POST">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-12">
+            <label> NOME COMPLETO </label>
+            <input id="id_full_name" name="full_name" value="{{ full_name }}">
+          </div>
+          <div class="col-md-5">
+            <label> RG </label>
+            <input id="id_rg" name="rg" placeholder="000.000.000" value="{{ rg }}">
+          </div>
+          <div class="col-md-7">
+            <label> CPF </label>
+            <input id="id_cpf_cnpj" name="cpf_cnpj" placeholder="000.000.000-00" value="{{ cpf_cnpj }}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <label> EMAIL </label>
+            <input id="id_email" name="email" placeholder="email@email.com" value="{{ email }}">
+          </div>
+          <div class="col-md-5">
+            <label> TELEFONE </label>
+            <input id="id_phone" name="phone" placeholder="(00) 00000-0000" value="{{ phone }}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <label> LOGIN </label>
+            <input id="id_username" name="username" value="{{ username }}">
+          </div>
+          <div class="col-md-6">
+            <label> SENHA </label>
+            <input id="id_password" name="password" type="password" placeholder="••••" value="{{ password }}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10">
+            <label> RUA </label>
+            <input id="id_adress" name="adress" value="{{ adress }}">
+          </div>
+          <div class="col-md-2">
+            <label> NÚMERO</label>
+            <input >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <label> CIDADE </label>
+            <input>
+          </div>
+          <div class="col-md-5">
+            <label> BAIRRO </label>
+            <input >
+          </div>
+          <div class="col-md-2">
+            <label> UF </label>
+            <input >
+          </div>
+        </div>
+        <br/>
+        <button type="submit"> CADASTRAR </button>
+      </form>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>
+
+</html>

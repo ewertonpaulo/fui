@@ -1,0 +1,122 @@
+body {
+  background-repeat: no-repeat;
+  font-family: Roboto;
+  color: #3b3b3b;
+  background: url('../images/home_bg.png');
+  background-repeat: no-repeat;
+}
+a, a:hover {
+  color: #3b3b3b;
+}
+
+input, input:focus {
+  width: 100%;
+  border: none;
+  height: 40px;
+  outline: none;
+  padding-left: 12px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+button, button:focus {
+  width: 100%;
+  border: none;
+  height: 40px;
+  outline: none;
+  padding-left: 12px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: white;
+  background: #2d9b8a;
+}
+
+button:focus {
+  background: #258374;
+}
+
+.title {
+  font-family: gothamblack;
+  font-size: 36px;
+}
+
+.event-name {
+  font-family: gothamblack;
+  font-size: 28px;
+}
+
+.event-desc {
+  font-size: 16px;
+}
+
+.navbar-brand {
+  font-family: joshandemo;
+  font-size: 42px;
+  margin-top: -10px;
+  margin-left: 5px;
+  color: #3b3b3b;
+}
+
+.nav-link {
+  font-family: Roboto;
+  color: #3b3b3b;
+  margin-top: -5px;
+  margin-left: 10px;
+  font-weight: 550;
+}
+
+.main {
+  height: 100vh;
+  background: transparent;
+}
+
+.centered {
+  position:absolute;
+    left:0; right:0;
+    top:0; bottom:0;
+  margin:auto;
+}
+
+.mainsearch {
+  width: 60%;
+  height: 130px;
+}
+
+.mainsearch input {
+  height: 56px;
+  font-size: 16px;
+}
+
+
+.login {
+  width: 300px;
+  height: 350px;
+}
+
+.login .logo, .logo:hover {
+  font-family: joshandemo;
+  font-size: 90px;
+  text-decoration: none;
+}
+.login .extra {
+  font-size: 14px; text-transform: uppercase;
+  margin-bottom: -5px;
+  font-weight: bold;
+}
+
+section {
+  padding-top: 20px;
+  background: #eee;
+}
+
+@font-face {
+    font-family: joshandemo;
+    src: url('../fonts/joshandemo.ttf');
+}
+
+@font-face {
+    font-family: gothamblack;
+    src: url('../fonts/gotham-black.otf');
+}

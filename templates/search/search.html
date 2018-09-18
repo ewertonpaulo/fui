@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Fui - Eventos</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="{% static "css/style.css" %}">
+  <link rel="stylesheet" href="{% static "css/search.css" %}">
+</head>
+
+<body>
+
+  <nav class="navbar fixed-top navbar-expand-lg" id="nav-menu">
+    <a class="navbar-brand" href="#">fui</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+  				 <span class="navbar-toggler-icon"></span>
+  			 </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <div class="col-md-6 offset-md-6" id="container-nav">
+        <ul class="navbar-nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">DIVULGUE SEU EVENTO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/">AJUDA</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/signup">CADASTRE-SE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/login">ENTRAR</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="col-md-12 top-search">
+    <br/>
+    <br/>
+  <form>
+    <input placeholder="PROCURAR ... ">
+    <button class="btn-mini"> DATAS </button>
+    <button class="btn-mini"> CIDADE </button>
+    <button class="btn-mini"> VALOR </button>
+</form>
+    <div class="row">
+      <div class="col-md-3">
+        <img src="{% static "images/evento.png" %}" class="img-fluid"/>
+        <a class="event-name" href="event"> Event Name </a>
+        <p class="event-desc"> Descrição do evento evento evento evento evento evento evento evento evento evento </p>
+      </div>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -31,7 +31,10 @@ def home(request):
 '''
 def singUp(request):
     if request.method == 'POST':
+
         form = kingForm(request.POST)
+
+
         if form.is_valid():
             king = King()
             user_name = form.cleaned_data.get('username')
@@ -50,7 +53,7 @@ def singUp(request):
             return redirect('cadastro-king')
     else:
         form = kingForm()
-    return render(request, 'cadastro-king.html', {'form': form})
+    return render(request, 'usuario/cadastrar.html', {'form': form})
 '''
 def login(request):
     user_name = request.POST['user_name']
@@ -62,6 +65,6 @@ def login(request):
     else:
         return redirect('login')
 '''
-@login_required
+
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home/index.html')

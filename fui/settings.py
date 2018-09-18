@@ -128,7 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    'estaticos',
+    'statics',
 ]
 MEDIA_URL = '/media/'
 
