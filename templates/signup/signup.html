@@ -1,0 +1,87 @@
+{% extends "base/base.html" %}
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <li>{% if message.tags %} {{ message.tags }}: {% endif %}{{ message }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% block content %}
+<div class="col main-signup">
+  <div class="signup col-md-6">
+    <span class="title"> CADASTRO ANIMAL </span>
+    <form action="{% url 'signup' %}" method="POST">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-md-6">
+          <label> NOME </label>
+          {{auth_f.first_name}}
+        </div>
+        <div class="col-md-6">
+          <label> SOBRENOME </label>
+          {{auth_f.last_name}}
+        </div>
+        <div class="col-md-5">
+          <label> RG </label>
+          {{user_f.rg}} 
+        </div>
+        <div class="col-md-7">
+          <label> CPF </label>
+          {{user_f.cpf}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7">
+          <label> EMAIL </label>
+          {{auth_f.email}}
+        </div>
+        <div class="col-md-5">
+          <label> TELEFONE </label>
+          {{user_f.telephone}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label> USERNAME </label>
+          {{auth_f.username}}
+        </div>
+        {% if user.is_authenticated == False %}
+        <div class="col-md-6">
+          <label> SENHA </label>
+          {{auth_f.password}}
+        </div>
+        {%endif%}
+      </div>
+
+      <div class="row">
+        <div class="col-md-10">
+          <label> RUA </label>
+          {{address_f.street}}
+        </div>
+        <div class="col-md-2">
+          <label> NÚMERO</label>
+          {{address_f.number}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-5">
+          <label> CIDADE </label>
+          {{address_f.city}}
+        </div>
+        <div class="col-md-5">
+          <label> BAIRRO </label>
+          {{address_f.neighborhood}}
+        </div>
+        <div class="col-md-2">
+          <label> UF </label>
+          {{address_f.df}}
+        </div>
+      </div>
+      <br />
+      <button type="submit"> CADASTRAR </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

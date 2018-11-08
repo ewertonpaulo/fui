@@ -1,0 +1,46 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<section class="col-md-12 centered">
+  <div class="profile centered">
+    <div class="row">
+      <div class="col-md-4">
+        <h1 class="navbar-brand name"> {{user.first_name}} </h1>
+        <center>
+        <form action="{% url 'edit_photo' %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="profile-img" style="background: url('{{user_animal.photo.url}}');background-size: cover;display: block;"></div>
+          {{ form.photo }}
+          <button class="nav-item" type="submit">ALTERAR FOTO</button>
+        </form></center>
+      </div>
+      <div class="col-md-8">
+        <label> EMAIL: </label>
+        <h5>{{user.email}}</h5>
+        <label> CPF: </label>
+        <h5>{{user_animal.cpf}}</h5>
+        <label> RG: </label>
+        <h5>{{user_animal.rg}}</h5>
+        <label> Tipo: </label>
+        <h5>{{user_animal.type}}</h5>
+        <label> Endereço: </label>
+        <h5>{{user_animal.address.street}}, n {{user_animal.address.number}}, {{user_animal.address.neighborhood}}, {{user_animal.address.city}}, {{user_animal.address.df}}.</h5>
+        <h6 style="text-align: right; margin-top: 20px;">
+            <a href="{% url 'edit_profile' %}">EDITAR</a>
+            {% if user_animal.type != "King" %}
+            <a href="{% url 'update_to_king' %}">TORNAR-SE KING</a>
+            {% endif %}
+            <a href="{% url 'delete_user' %}">APAGAR CONTA</a>
+            {% if user_animal.type == "King" %}
+            <a href="{% url 'create_event' %}">CRIAR EVENTO</a>
+            <a href="{% url 'list_event' %}">MEUS EVENTOS</a>
+            {% endif %}
+        </h6>
+
+      </div>
+    </div>
+  </div>
+</section>
+    
+{% endblock %}

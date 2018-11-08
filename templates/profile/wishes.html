@@ -1,0 +1,50 @@
+{% extends "base/base.html" %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>{% if message.tags %} {{ message.tags }}: {% endif %}{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% block content %}
+<div class="col main-signup">
+    <div class="signup col-md-6">
+        <span class="title"> CADASTRO ANIMAL </span>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-6">
+                    <label> FREQUENCIA </label>
+                    {{form.frequency}}
+                </div>
+                <div class="col-md-3">
+                    <label> TIPO </label>
+                    {{form.type}}
+                </div>
+                <div class="col-md-3">
+                    <label> GOSTO MUSICAL </label>
+                    {{form.music_taste}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label> VOC� BEBE? </label>
+                    {{form.drink}}
+                </div>
+                <div class="col-md-2">
+                    <label> DIST�NCIA </label>
+                    {{form.distance}}
+                </div>
+                <div class="col-md-8">
+                    <label> IMPORTA O PRE�O? </label>
+                    {{form.price}}
+                </div>
+            </div>
+            <br />
+            <button type="submit">ENVIAR</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

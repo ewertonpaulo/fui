@@ -1,0 +1,26 @@
+{% extends "base/base.html" %}
+{% block content %}
+  <section class="main">
+    <div class="login centered text-center">
+      <a class="logo" href="{% url 'home' %}"> fui </a>
+      <form method="POST">
+        {% csrf_token %}
+            <label> USERNAME </label>
+            {{form.username}}
+            <label> SENHA </label>
+            {{form.password}}
+        <button type="submit">ENTRAR</button>
+      </form>
+      <a class="extra" href="esqueceu"> Esqueceu sua senha?</a> <br/>
+      <a class="extra" href="{% url 'signup' %}"> Cadastre-se</a> <br/>
+
+      {% if form.errors %}
+        {% for error in form.non_field_errors %}
+            <div class="alert alert-danger" style="font-size: 12px;">
+                {{ error|escape }}
+            </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

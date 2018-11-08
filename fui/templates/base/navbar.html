@@ -1,0 +1,35 @@
+<nav class="navbar fixed-top navbar-expand-lg" id="nav-menu">
+    <a class="navbar-brand" href="{% url 'home' %}">fui</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+        <div class="col-md-6 offset-md-6" id="container-nav">
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">DIVULGUE SEU EVENTO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">AJUDA</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'profile' %}">PROFILE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'logout' %}">SAIR</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'signup' %}">CADASTRE-SE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'login' %}">ENTRAR</a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+</nav>

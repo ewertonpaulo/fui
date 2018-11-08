@@ -1,0 +1,42 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<section class="main">
+  <div class="search centered">
+    <span class="title"><span id="title"></span>|</span>
+    <form action="/search"><input placeholder="EXPERIMENTE “SÃO PAULO”"></form>
+  </div>
+</section>
+
+<section class="col-md-12 top-search">
+  <span class="title"> POPULARES NO MOMENTO </span>
+  <div class="row">
+  {% for evt in events %}
+    <div class="event col-md-4">
+      <img src="{{evt.image.url}}" class="img-fluid" />
+      <a class="title" href="{% url 'details_event' evt.id %}">{{ evt.name }}</a>
+      <p class="event-desc">{{ evt.description }}</p>
+      <a href="{% url 'create_event_comment' evt.id %}">AVALIAR</a>
+    </div>
+  {% endfor %}
+</div>
+</section>
+<div class="pagination">
+  <span class="step-links">
+    {% if events.has_previous %}
+    <a href="?page=1">&laquo; first</a>
+    <a href="?page={{ events.previous_page_number }}">previous</a>
+    {% endif %}
+
+    <span class="current">
+      Page {{ events.number }} of {{ events.paginator.num_pages }}.
+    </span>
+
+    {% if events.has_next %}
+    <a href="?page={{ events.next_page_number }}">next</a>
+    <a href="?page={{ events.paginator.num_pages }}">last &raquo;</a>
+    {% endif %}
+  </span>
+</div>
+{% endblock %}

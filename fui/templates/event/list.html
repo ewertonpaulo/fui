@@ -1,0 +1,43 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="centered">
+<section class="table">
+    <table id="listaUsuarios" class="centered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Modality</th>
+                <th>Description</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for evt in events %}
+            <tr>
+                <td>{{ evt.name }}</td>
+                <td>{{ evt.modality }}</td>
+                <td>{{ evt.description }}</td>
+                <td>{{ evt.type }}</td>
+                <td>
+                    <a href="{% url 'edit_event' evt.id %}">EDITAR</a>
+                    <a href="{% url 'delete_event' evt.id %}">DELETAR</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</section>
+<style>
+    #listaUsuarios {
+        margin-left: 35%;
+        width: 400px;
+        background: rgba(255,255,255,.8);
+    }
+    .table {
+        padding-top: auto;
+        padding-bottom: auto;
+    }
+</style>
+
+{% endblock %}

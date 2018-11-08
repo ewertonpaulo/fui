@@ -1,0 +1,64 @@
+
+{% extends "base/base.html" %}
+{% block content %}
+<div class="col  main-signup">
+  <div class="signup col-md-6">
+    <span class="title"> NOVO EVENTO </span>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-md-12">
+          <label> NOME </label>
+          {{form.name}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label> IMAGEM PARA DIVULGAÇÃO [1:1] </label>
+          {{form.image}}
+        </div>
+        <div class="col-md-3">
+          <label> +18 </label>
+          {{form.forbidden}}
+        </div>
+        <div class="col-md-3">
+          <label>Alcoolicas</label>
+          {{form.drinks}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <label> Tipo </label>
+          {{form.type}}
+        </div>
+        <div class="col-md-4">
+          <label> Modalidade </label>
+          {{form.modality}}
+        </div>
+        <div class="col-md-4">
+          <label> CAPACIDADE </label>
+          {{form.capacity}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label> INÍCIO </label>
+          {{form.start_date}}
+        </div>
+        <div class="col-md-6">
+          <label> FIM </label>
+          {{form.end_date}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label> DESCRIÇÃO </label>
+          {{form.description}}
+        </div>
+      </div>
+
+      <button type="submit"> CADASTRAR </button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+  <section class="col-md-12 top-search">
+    <br/>
+    <br/>
+  <form>
+    <input placeholder="PROCURAR ... ">
+    <button class="btn-mini"> DATAS </button>
+    <button class="btn-mini"> CIDADE </button>
+    <button class="btn-mini"> VALOR </button>
+</form>
+    <div class="row">
+      <div class="col-md-3">
+        <img src="{% static "images/evento.png" %}" class="img-fluid"/>
+        <a class="event-name" href="event"> Event Name </a>
+        <p class="event-desc"> Descrição do evento evento evento evento evento evento evento evento evento evento </p>
+      </div>
+    </div>
+  </section>
+  {% endblock %}

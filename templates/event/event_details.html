@@ -1,0 +1,36 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+{% block content %}
+<section class="col-md-12 centered" style="background: transparent">
+  <div class="events centered">
+    <div class="row description">
+      <div class="col-md-8">
+        <img src="{{event.image.url}}" class="img-fluid" />
+      </div>
+      <div class="col-md-4" style="text-align: left;">
+        <div class="title"> {{ event.name }} </div>
+        <p>{{ event.description }} </p>
+          <li>{% if event.modality == "fr" %} Grátis {% else %} Pago {% endif %}</li>
+          <li>+18: {{ event.forbidden | yesno }}</li>
+          <li>Alcool: {{ event.drinks | yesno }}</li>
+          <li>Capacidade: {{ event.capacity }}</li>
+          <li>Início: {{ event.start_date }}</li>
+          <li>Final: {{ event.end_date }}</li>
+      </div>
+    </div>
+    {% if ratings %}
+      <div class="rates" style="text-align: left; padding: 10px;">
+        AVALIAÇÕES
+        {% for rt in ratings %}
+        <div class="row rate">
+          <a href="#" class="col-md-3 bdright">{{rt.user}}</a>
+          <span class="col-md-6 bdright">{{rt.comment}}</span>
+          <span class="col-md-1 bdright">{{rt.note}}</span>
+          <a href="{% url 'edite_rating' rt.id %}" class="col-md-1"><i class="material-icons">edit</i></a>
+        </div>
+      </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

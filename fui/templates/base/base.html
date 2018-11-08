@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Fui - Eventos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+
+<body>
+
+{% include "base/navbar.html" %}
+
+{% block content %}
+{% endblock %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+<script>
+   var texto = "PROCURE EVENTOS POR TODO BRASIL";
+   var result;
+   var count = 0;
+   function digitar() {
+     result = document.getElementById("title");
+     window.setTimeout(function() {
+       inserir(texto[count]) }, 200);
+     }
+    function inserir(letra) {
+      result.innerHTML += letra;
+      count++;
+      if(count < texto.length)
+       window.setTimeout(function() {
+         inserir(texto[count])
+       }, 50);
+     }
+     window.onload = digitar;
+//
+// function changeNavColor(){
+//     $(window).scroll(function() {
+//       nav = document.getElementById('nav-menu');
+//       links = document.getElementsByClassName('nav-link');
+//  window.setTimeout( function() {
+//       if ($(window).scrollTop() == 0) {
+//           nav.style.background = 'transparent';
+//           nav.style.boxShadow = '0 0 0 0 #333';
+//           for(let link of links){
+//             link.style.color = 'white';
+//           }
+//       } else {
+//           nav.style.background = 'white';
+//           nav.style.boxShadow = '0 5px 6px -6px #333';
+//           for(let link of links){
+//             link.style.color = '#333';
+//           }
+//       } }, 100);
+//   });
+// }
+//
+// changeNavColor();
+  </script>
+</body>
+
+</html>
